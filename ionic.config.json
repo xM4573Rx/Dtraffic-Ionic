@@ -1,5 +1,7 @@
 {
   "name": "Dtraffic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
