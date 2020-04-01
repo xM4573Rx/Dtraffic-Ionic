@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 declare var WifiWizard2: any;
 
@@ -11,8 +12,11 @@ export class HomePage {
 
   results = [];
   infoText = '';
+  data = [];
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.getSSID();
   }
 
@@ -25,6 +29,20 @@ export class HomePage {
     } catch (error) {
       this.infoText = error;
     }
-    console.log(this.results);
+
+    for (const x of this.results) {
+      this.data.push(x.SSID);
+    }
+
+    for (const i of this.data) {
+      if (i === 'HITRON-AFA0') {
+        this.router.navigate(['/node']);
+        console.log('OK');
+      }
+    }
+  }
+
+  networks(data) {
+    console.log(data);
   }
 }

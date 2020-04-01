@@ -16,8 +16,8 @@
   <div id="container">
     {{ infoText }}
     <ion-list>
-      <ion-item *ngFor="let data of results">
-        {{ data.SSID }}
+      <ion-item *ngFor="let result of results; let i = index;">
+        {{ result.SSID }}
       </ion-item>
     </ion-list>
   </div>

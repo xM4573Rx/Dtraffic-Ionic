@@ -1,0 +1,39 @@
+ion-content {
+    --offset-top: 0px;
+    --offset-bottom: 0px;
+    font-size: large;
+    .container {
+        // display: flex;
+        // flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding: 3%;
+        .header {
+            // flex: 1;
+            justify-content: center;
+            text-align: center;
+            padding-top: 7%;
+            .title {
+                img {
+                    height: 35%;
+                    width: 35%;
+                }
+            }
+        }
+        .body {
+            ion-list {
+                
+                ion-item {
+                    border-radius: 1% !important;
+                }
+            }
+        }
+        .footer {
+            display: flex;
+            a {
+                font-weight: 600;
+                text-decoration: none;
+            }
+        }
+    }
+}
