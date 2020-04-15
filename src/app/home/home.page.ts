@@ -35,9 +35,9 @@ export class HomePage {
     }
 
     for (const i of this.data) {
-      if (i === 'HITRON-AFA0') {
-        this.router.navigate(['/node']);
+      if (i === 'ElectrikAppPunto') {
         console.log('OK');
+        this.router.navigate(['/node']);
       }
     }
   }

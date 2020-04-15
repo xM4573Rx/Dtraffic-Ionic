@@ -19,26 +19,33 @@
       <ion-list>
         <ion-item>
           <ion-label position="floating">Red</ion-label>
-          <ion-input></ion-input>
+          <ion-input [(ngModel)]="net"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Red</ion-label>
-          <ion-input></ion-input>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input [(ngModel)]="pass"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Red</ion-label>
-          <ion-input></ion-input>
+          <ion-label position="floating">Ubicación del punto</ion-label>
+          <ion-input [(ngModel)]="location"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Red</ion-label>
-          <ion-input></ion-input>
+          <ion-label position="floating">Nombre del punto</ion-label>
+          <ion-input [(ngModel)]="name"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Red</ion-label>
-          <ion-input></ion-input>
+          <ion-label position="floating">ID de central</ion-label>
+          <ion-input [(ngModel)]="id"></ion-input>
         </ion-item>
       </ion-list>
-      <ion-button expand="block" style="margin-bottom: 5%;">ENVIAR</ion-button>
+      <ion-row style="margin-bottom: 5%;">
+        <ion-col class="ion-no-padding" width-50>
+          <ion-button expand="block" (click)="readNodeData()">CARGAR</ion-button>
+        </ion-col>
+        <ion-col class="ion-no-padding" width-50>
+          <ion-button expand="block" (click)="sendNodeData()">ENVIAR</ion-button>
+        </ion-col>
+      </ion-row>
     </div>
   </div>
 </ion-content>
