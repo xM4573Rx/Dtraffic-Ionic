@@ -1,9 +1,47 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>central</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Central</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="container">
+    <div class="header">
+      <div class="title">
+        <img src="../../../assets/images/icon.png">
+      </div>
+    </div>
+    <div class="body">
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Red</ion-label>
+          <ion-input [(ngModel)]="net"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input [(ngModel)]="pass"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Nombre de la central</ion-label>
+          <ion-input [(ngModel)]="name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">ID de central</ion-label>
+          <ion-input [(ngModel)]="id"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-row style="margin-bottom: 5%; margin-top: 3%">
+        <ion-col class="ion-no-padding" width-50>
+          <ion-button expand="block" (click)="readCentralData()">CARGAR</ion-button>
+        </ion-col>
+        <ion-col class="ion-no-padding" width-50>
+          <ion-button expand="block" (click)="sendCentralData()">ENVIAR</ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
 </ion-content>

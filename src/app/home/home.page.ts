@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { interval } from 'rxjs';
 
 declare var WifiWizard2: any;
 
@@ -13,11 +14,16 @@ export class HomePage {
   results = [];
   infoText = '';
   data = [];
+  sub: any;
 
   constructor(
     private router: Router
   ) {
-    this.getSSID();
+    this.sub = interval(10000)
+    .subscribe((val) => {
+      console.log('called');
+      this.getSSID();
+    });
   }
 
   async getSSID() {
@@ -37,7 +43,14 @@ export class HomePage {
     for (const i of this.data) {
       if (i === 'ElectrikAppPunto') {
         console.log('OK');
+        this.sub.unsubscribe();
         this.router.navigate(['/node']);
+      }
+
+      if (i === 'ElectrikAppCentral') {
+        console.log('OK');
+        this.sub.unsubscribe();
+        this.router.navigate(['/central']);
       }
     }
   }

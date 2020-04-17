@@ -17,7 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot({ _forceStatusbarPadding: true }),
     AppRoutingModule
   ],
   providers: [

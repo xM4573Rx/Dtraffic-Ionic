@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, from } from 'rxjs';
+import { from } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { HTTP } from '@ionic-native/http/ngx';
 import { LoadingController } from '@ionic/angular';
@@ -20,10 +19,8 @@ export class NodePage implements OnInit {
   location = '';
   id = '';
   data: any;
-  films: Observable<any>;
 
   constructor(
-    private http: HttpClient,
     private nativeHttp: HTTP,
     private loadingCtrl: LoadingController
   ) { }

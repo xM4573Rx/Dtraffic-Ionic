@@ -4,12 +4,17 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import { timer } from 'rxjs';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+
+  showSplash = true;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -21,7 +26,14 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
+
+      if (this.platform.is('android')) {
+        this.statusBar.backgroundColorByHexString('#33000000');
+      }
+
       this.splashScreen.hide();
+
+      timer(1000).subscribe(() => this.showSplash = false);
     });
   }
 }

@@ -38,3 +38,8 @@ ion-content {
         }
     }
 }
+
+ion-header ion-toolbar {
+    --background: #fff url('../../../assets/images/background_tonos.png') no-repeat center center / cover;
+    color: white;
+}
